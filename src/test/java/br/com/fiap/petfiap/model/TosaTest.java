@@ -23,6 +23,15 @@ public class TosaTest {
     }
 
     @Test
+    public void deveDurar60Minutos() {
+        // Act
+        int duracao = tosaDoRex().getDuracaoMinutos();
+
+        // Assert: o polimorfismo precisa enxergar os 60 minutos da Tosa
+        assertEquals(60, duracao);
+    }
+
+    @Test
     public void deveCustar70ReaisParaPortePequeno() {
         // Act
         double preco = tosaDoRex().calcularPreco();
