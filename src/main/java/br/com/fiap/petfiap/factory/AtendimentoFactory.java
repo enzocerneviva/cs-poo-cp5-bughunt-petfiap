@@ -14,9 +14,9 @@ public class AtendimentoFactory {
     public static Atendimento criar(int protocolo, String tipo, String petNome, String petPorte,
                                     String tutorNome, LocalDateTime dataHora) {
         return switch (tipo) {
-            case "BANHO" -> new Banho(protocolo, petNome, petPorte, tutorNome, dataHora);
-            case "TOSA" -> new Tosa(protocolo, petNome, petPorte, tutorNome, dataHora);
-            case "CONSULTA" -> new ConsultaVeterinaria(protocolo, petNome, petPorte, tutorNome, dataHora);
+            case Banho.TIPO -> new Banho(protocolo, petNome, petPorte, tutorNome, dataHora);
+            case Tosa.TIPO -> new Tosa(protocolo, petNome, petPorte, tutorNome, dataHora);
+            case ConsultaVeterinaria.TIPO -> new ConsultaVeterinaria(protocolo, petNome, petPorte, tutorNome, dataHora);
             default -> throw new IllegalArgumentException("Tipo invalido: " + tipo);
         };
     }
